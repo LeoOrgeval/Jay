@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <!-- 1st page - Cover -->
+    <div class="pt-4 pb-40 tracking-widest" style="background-color: #28293E">
+        <h3 class="ml-32 mt-20 text-orange text-2xl"  style="letter-spacing: 0.14em">
+            Jay Cormier
+        </h3>
+        <h1 class="ml-32 mt-4 text-white text-7xl font-black">
+            Lorem Ipsum
+        </h1>
+        <h6 class="ml-52 mt-2 mb-4 text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </h6>
+        <div class="ms-5 mt-60">
+            <button type="button" class="btn btn-outline-white" data-mdb-ripple-color="white">Contact</button>
+        </div>
+
+    </div>
+    <!-- 2nd page - Service -->
+    <div style="background-color: #FDF0E9">
+        <h6 class="pt-10 text-center text-orange font-light tracking-widest">
+            SERVICE
+        </h6>
+        <h1 class="m-10 text-center text-dark font-extrabold text-4xl">
+            Lorem Ipsum Dolor Sit
+        </h1>
+        <div class="flex flex-col lg:flex-row justify-center mb-40 items-center">
+            <div class="w-1/3 border-solid border-service">
+                <div class="m-10 p-8 rounded-full bg-orange">
+                    <img src="{{ asset('images/pencil.svg') }}" class="h-12 " alt="Pencil">
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="mt-8 lg:mt-0 w-1/3 border-solid border-service">
+                <div class="m-10 p-8 rounded-full bg-orange">
+                    <img src="{{ asset('images/message.svg') }}" class="h-12" alt="Message">
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <!-- 3rd page - Travaux -->
+        <div style="background-color: #28293E">
+            <h1 style="padding: 30px">
+                3rd page - Travaux
+            </h1>
+        </div>
+        <!-- 4th page - Contact -->
+        <div style="background-color: #FDF0E9">
+            <h1 style="padding: 30px">
+                4th page - Contact
+            </h1>
+        </div>
+        <!-- 5th page - Footer -->
+        <div style="background-color: #28293E">
+            <h1 style="padding: 30px">
+                5th page - Footer
+            </h1>
+        </div>
+    </div>
+{% endblock %}

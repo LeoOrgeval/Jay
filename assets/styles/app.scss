@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#content {
+  @apply pt-14;
+}
+
+.collapse-mdb {
+  &.collapse {
+    visibility: initial;
+  }
+
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.border-service {
+  border-width: 1px;
+  border-color: #F3D1BF
+}
