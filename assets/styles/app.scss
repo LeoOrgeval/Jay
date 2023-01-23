@@ -16,7 +16,26 @@
   }
 }
 
-.border-service {
+.border-orange {
   border-width: 1px;
   border-color: #F3D1BF
+}
+
+.border-blue {
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.27)
+}
+
+.border-t-blue {
+  border-top: 1px solid;
+  border-color: rgba(255, 255, 255, 0.27)
+}
+
+.hr {
+  @apply h-0 w-1/5;
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.tag {
+  @apply px-2 rounded-2xl bg-white;
 }
