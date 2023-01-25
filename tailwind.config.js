@@ -9,6 +9,7 @@ module.exports = {
     colors: {
       white: '#FFFFFF',
       blue: '#28293E',
+      calendly: '#006BFF',
       cream: '#FDF0E9',
       orange: '#EF6D58',
       dark_brown: '#391400',

@@ -48,19 +48,24 @@
                 <!-- Left links -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">JC</a>
+                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                           href="{{ url('home') }}">JC</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-orange" aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                           href="{{ url('home') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">A propos</a>
+                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                           href="{{ url('about') }}">A propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Service</a>
+                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                           href="#">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Projects</a>
+                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                           href="#">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-outline-light white" href="#">Contact</a>
@@ -73,7 +78,36 @@
         <!-- Container wrapper -->
     </nav>
 </header>
+<!-- Body -->
 <div id="content">{% block content %}{% endblock %}</div>
+<!-- Footer -->
+<div class="bg-blue">
+    <div class="sm:mx-20 lg:mx-40 grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+        <span class="text-white font-bold sm:my-16 lg:my-28">Jay Cormier</span>
+        <div class="sm:mt-16 lg:mt-28">
+            <h3 class="text-orange text-sm uppercase" style="letter-spacing: 3px">
+                Plan du site
+            </h3>
+            <div class="text-white text-sm sm:mt-3 lg:mt-8">Accueil</div>
+            <div class="text-white text-sm lg:mt-1">A propos</div>
+            <div class="text-white text-sm lg:mt-1">Service</div>
+        </div>
+        <div class="sm:mt-16 lg:mt-28">
+            <h3 class="text-orange text-sm uppercase" style="letter-spacing: 3px">Me contacter</h3>
+
+            <button type="button" class="btn btn-outline-white sm:mt-3 lg:mt-10" data-mdb-ripple-color="white">Contact</button>
+
+            <a class="block p-2.5 rounded-full bg-orange w-10 h-10 sm:mt-1 lg:mt-4" href="https://www.linkedin.com/in/jcormier/">
+                <img src="{{ asset('images/linkedin.svg') }}"
+                     class="w-full" alt="Message">
+            </a>
+        </div>
+    </div>
+    <hr class="text-white sm:mt-4 lg:mt-12">
+    <div class="text-center text-white sm:py-4 lg:py-12">
+        Copyright © 2023 Jay Cormier. All Rights Reserved.
+    </div>
+</div>
 <!-- MDB -->
 <script
         type="text/javascript"
