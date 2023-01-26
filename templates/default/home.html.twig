@@ -39,10 +39,12 @@
                 </div>
             </div>
             <div class="mt-8 lg:mt-0 w-1/3 border-solid border-orange rounded-r-md">
-                <div class="m-10 p-4 rounded-full bg-orange w-20 h-20">
+                <div class="m-10 p-4 rounded-full bg-orange w-20 h-20 flex">
                     <img src="{{ asset('images/message.svg') }}" class="h-8" alt="Message">
-                    <h3 class="text-dark_brown font-bold text-xl" style="letter-spacing: 3px">Extens Consulting</h3>
-
+                    <div class="w-full">
+                        <h3 class="text-dark_brown font-bold text-xl ml-10" style="letter-spacing: 3px">Extens
+                            Consulting</h3>
+                    </div>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote m-3 mb-9 text-shadow">
@@ -61,16 +63,16 @@
                             <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full"
                                  alt="Picture of phone">
                             <div class="mask bg-shadow"></div>
-                            <span class="tag absolute bottom-10 left-8 text-dark_brown text">Extens Consulting</span>
-                            <span class="absolute bottom-3 left-8 text-white font-extrabold">Titre du projet</span>
+                            <span class="tag tag-title">Extens Consulting</span>
+                            <span class="project-title">Titre du projet</span>
                         </div>
                         <div class="border-t-blue">
                             <div class="bg-image m-2">
                                 <img src="{{ asset('images/3rd_image.jpg') }}" class="object-cover w-full"
                                      alt="Picture of keyboard">
                                 <div class="mask bg-shadow"></div>
-                                <span class="tag absolute bottom-10 left-8 text-dark_brown text">Copywriting</span>
-                                <span class="absolute bottom-3 left-8 text-white font-extrabold">Titre du projet</span>
+                                <span class="tag tag-title">Copywriting</span>
+                                <span class="project-title">Titre du projet</span>
                             </div>
                         </div>
                     </div>
@@ -79,8 +81,8 @@
                             <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover h-full"
                                  alt="Picture of mac">
                             <div class="mask bg-shadow"></div>
-                            <span class="tag absolute bottom-10 left-8 text-dark_brown text">Extens Consulting</span>
-                            <span class="absolute bottom-3 left-8 text-white font-extrabold">Titre du projet</span>
+                            <span class="tag tag-title">Extens Consulting</span>
+                            <span class="project-title">Titre du projet</span>
                         </div>
                     </div>
                 </div>
@@ -99,9 +101,11 @@
                 Lorem Ipsum Dolor Sit
             </h1>
             <div class="lg:grid lg:grid-cols-2 lg:gap-4 lg:content-start">
-                <div class="m-10 p-2 rounded-full bg-calendly w-9 h-9 ml-72">
-                    <img src="{{ asset('images/calendly.svg') }}" class="h-5" alt="Logo Calendly">
-                    <div>Calendly</div>
+                <div class="m-10 p-4 rounded-full bg-white border-orange w-32 h-20">
+                    <div class="p-2 rounded-full bg-calendly w-9 h-9 ml-72">
+                        <img src="{{ asset('images/calendly.svg') }}" class="h-5" alt="Logo Calendly">
+                        <div>Calendly</div>
+                    </div>
                 </div>
                 <div class="m-10 p-2 rounded-full bg-orange w-9 h-9 ml-72">
                     <img src="{{ asset('images/mail.svg') }}" class="h-5" alt="Mail">

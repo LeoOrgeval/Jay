@@ -15,3 +15,15 @@ about:
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
         template: default/about.html.twig
+
+service:
+    path: /service
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+    defaults:
+        template: default/service.html.twig
+
+projects:
+    path: /projects
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+    defaults:
+        template: default/projects.html.twig

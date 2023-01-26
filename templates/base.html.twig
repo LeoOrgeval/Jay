@@ -61,11 +61,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
-                           href="#">Service</a>
+                           href="{{ url('service') }}">Service</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
-                           href="#">Projects</a>
+                           href="{{ url('projects') }}">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-outline-light white" href="#">Contact</a>
@@ -88,9 +88,12 @@
             <h3 class="text-orange text-sm uppercase" style="letter-spacing: 3px">
                 Plan du site
             </h3>
-            <div class="text-white text-sm sm:mt-3 lg:mt-8">Accueil</div>
-            <div class="text-white text-sm lg:mt-1">A propos</div>
-            <div class="text-white text-sm lg:mt-1">Service</div>
+            <div class="sm:mt-3 lg:mt-8">
+            <a class="text-white text-sm" href="{{ url('home') }}">Accueil</a><br>
+            <a class="text-white text-sm" href="{{ url('about') }}">A propos</a><br>
+            <a class="text-white text-sm" href="{{ url('service') }}">Service</a><br>
+            <a class="text-white text-sm" href="{{ url('projects') }}">Projets</a><br>
+            </div>
         </div>
         <div class="sm:mt-16 lg:mt-28">
             <h3 class="text-orange text-sm uppercase" style="letter-spacing: 3px">Me contacter</h3>
@@ -105,7 +108,7 @@
     </div>
     <hr class="text-white sm:mt-4 lg:mt-12">
     <div class="text-center text-white sm:py-4 lg:py-12">
-        Copyright © 2023 Jay Cormier. All Rights Reserved.
+        Copyright © 2023 Jay Cormier.
     </div>
 </div>
 <!-- MDB -->
