@@ -27,3 +27,13 @@ projects:
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
         template: default/projects.html.twig
+
+admin:
+    path: /admin
+    controller: App\Controller\AdminController::home
+    methods: GET
+
+login:
+    path: /login
+    controller: App\Controller\AuthController::login
+    methods: POST

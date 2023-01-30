@@ -24,7 +24,7 @@
 </head>
 <body>
 <header class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28293E">
+    <nav class="navbar navbar-expand-lg navbar-light bg-blue">
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Toggle button -->
@@ -42,15 +42,17 @@
 
             <!-- Collapsible wrapper -->
             <div
-                    class="collapse-mdb navbar-collapse justify-content-center"
+                    class="collapse-mdb navbar-collapse"
                     id="navbarCenteredExample"
             >
                 <!-- Left links -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav  me-auto mb-2 mb-lg-0 flex justify-between">
+                    <div class=" flex justify-between">
                     <li class="nav-item">
-                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                        <a class="nav-link text-white"
                            href="{{ url('home') }}">JC</a>
                     </li>
+                    </div>
                     <li class="nav-item">
                         <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
                            href="{{ url('home') }}">Accueil</a>
@@ -68,11 +70,13 @@
                            href="{{ url('projects') }}">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Button trigger Contact Navbar-->
+                        <!-- Right Link - Button trigger Contact Navbar-->
+                        <div class="flex justify-end">
                         <button type="button" class="btn btn-outline-white" data-mdb-toggle="modal"
-                                data-mdb-target="#formCalendly" data-mdb-ripple-color="white">
+                                data-mdb-target="#formChoose" data-mdb-ripple-color="white">
                             Contact
                         </button>
+                        </div>
                     </li>
                 </ul>
                 <!-- Left links -->
@@ -105,10 +109,42 @@
 
             <!-- Button trigger Contact Footer -->
             <button type="button" class="btn btn-outline-white sm:mt-3 lg:mt-10" data-mdb-toggle="modal"
-                    data-mdb-target="#formCalendly" data-mdb-ripple-color="white">
+                    data-mdb-target="#formChoose" data-mdb-ripple-color="white">
                 Contact
             </button>
             <!-- First modal dialog -->
+            <div class="modal fade" id="formChoose" aria-hidden="true" aria-labelledby="formChooseModal"
+                 tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-blue w-full">
+                            <h5 class="modal-title text-white font-bold ml-2" id="formChooseModal">Lorem Ipsum</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-blue flex items-center justify-evenly py-10">
+
+                                <button type="button" class="btn btn-info sm:mt-3 lg:mt-10"
+                                        data-mdb-toggle="modal"
+                                        data-mdb-target="#formCalendly">
+                                    Calendly
+                                </button>
+                                <button type="button" class="btn btn-warning sm:mt-3 lg:mt-10"
+                                        data-mdb-toggle="modal"
+                                        data-mdb-target="#formMail">
+                                    Email
+                                </button>
+
+                        </div>
+                        <div class="modal-footer flex justify-center">
+                            <div>
+                                Lorem ipsum
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Calendly modal dialog -->
             <div class="modal fade" id="formCalendly" aria-hidden="true" aria-labelledby="formCalendlyModal"
                  tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
@@ -142,7 +178,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Second modal dialog -->
+            <!-- Mail modal dialog -->
             <div class="modal fade" id="formMail" aria-hidden="true" aria-labelledby="formMailModal"
                  tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">

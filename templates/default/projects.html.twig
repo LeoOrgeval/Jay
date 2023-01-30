@@ -3,12 +3,12 @@
 {% block content %}
     <!-- 1st page - Cover -->
     <title>Projets</title>
-    <div class="py-24 tracking-widest bg-blue text-center text-white text-6xl font-black">
+    <div class="py-12 tracking-widest bg-blue text-center text-white text-6xl font-black">
         Lorem Ipsum
     </div>
     <!-- 2nd page -->
-    <div class="bg-cream py-20">
-        <div class="flex justify-evenly my-20 mx-96 text-2xl font-light">
+    <div class="bg-cream py-12">
+        <div class="flex justify-evenly my-12 mx-96 text-2xl font-light">
             <span class="text-dark_brown">Tous</span>
             <span class="text-light_brown">Extens Consulting</span>
             <span class="text-light_brown">Copywriting</span>
@@ -17,22 +17,31 @@
             Extens Consulting
         </div>
         <div class="flex justify-around my-20">
-            <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
-                <div class="mask" style="background: linear-gradient(45deg, hsla(168, 85%, 52%, 0.5), hsla(263, 88%, 45%, 0.5) 100%);"></div>
+                <div class="mask"
+                     style="background: linear-gradient(45deg, hsla(168, 85%, 52%, 0.5), hsla(263, 88%, 45%, 0.5) 100%);"></div>
                 <span class="tag tag-title">Extens Consulting</span>
                 <span class="project-title">Titre du projet</span>
             </div>
-            <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
-                <div class="mask" style="background: linear-gradient(45deg, hsla(168, 85%, 52%, 0.5), hsla(263, 88%, 45%, 0.5) 100%);"></div>
+                <div class="mask"
+                     style="background: linear-gradient(45deg, hsla(168, 85%, 52%, 0.5), hsla(263, 88%, 45%, 0.5) 100%);"></div>
                 <span class="tag tag-title">Extens Consulting</span>
                 <span class="project-title">Titre du projet</span>
             </div>
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover w-full h-full"
+                     alt="Picture of phone">
+                <div class="mask bg-shadow"></div>
+                <span class="tag tag-title">Extens Consulting</span>
+                <span class="project-title">Titre du projet</span>
+            </div>
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+                <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Extens Consulting</span>
@@ -40,35 +49,30 @@
             </div>
         </div>
         <div class="flex justify-around my-20">
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
-                <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                     alt="Picture of phone">
-                <div class="mask bg-shadow"></div>
-                <span class="tag tag-title">Extens Consulting</span>
-                <span class="project-title">Titre du projet</span>
-            </div>
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/3rd_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Extens Consulting</span>
                 <span class="project-title">Titre du projet</span>
             </div>
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Extens Consulting</span>
                 <span class="project-title">Titre du projet</span>
             </div>
-        </div>
-        <div class="flex justify-around mt-20">
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Extens Consulting</span>
                 <span class="project-title">Titre du projet</span>
+            </div>
+            <div class="bg-image m-2 rounded-[12px] w-64">
+
             </div>
         </div>
         <!-- Copywriting -->
@@ -76,22 +80,29 @@
             Copywriting
         </div>
         <div class="flex justify-around mt-20">
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Copywriting</span>
                 <span class="project-title">Titre du projet</span>
             </div>
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Copywriting</span>
                 <span class="project-title">Titre du projet</span>
             </div>
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
+                     alt="Picture of phone">
+                <div class="mask bg-shadow"></div>
+                <span class="tag tag-title">Copywriting</span>
+                <span class="project-title">Titre du projet</span>
+            </div>
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+                <img src="{{ asset('images/3rd_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
                 <span class="tag tag-title">Copywriting</span>
@@ -99,14 +110,7 @@
             </div>
         </div>
         <div class="flex justify-around my-20">
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
-                <img src="{{ asset('images/3rd_image.jpg') }}" class="object-cover w-full h-full"
-                     alt="Picture of phone">
-                <div class="mask bg-shadow"></div>
-                <span class="tag tag-title">Copywriting</span>
-                <span class="project-title">Titre du projet</span>
-            </div>
-            <div class="bg-image m-2 rounded-[12px] w-96" style="aspect-ratio: 4/5">
+            <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                 <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
                      alt="Picture of phone">
                 <div class="mask bg-shadow"></div>
