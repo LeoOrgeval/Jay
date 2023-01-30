@@ -14,9 +14,12 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </h6>
         <div class="ml-12 mt-60">
-            <button type="button" class="btn btn-outline-white" data-mdb-ripple-color="white">Contact</button>
+            <!-- Button trigger Contact Homepage -->
+            <button type="button" class="btn btn-outline-white" data-mdb-toggle="modal"
+                    data-mdb-target="#formCalendly" data-mdb-ripple-color="white">
+                Contact
+            </button>
         </div>
-
     </div>
     <!-- 2nd page - Service -->
     <div class="pt-10 bg-cream">
@@ -28,9 +31,9 @@
         </h1>
         <div class="flex flex-col lg:flex-row justify-center mb-40 items-center">
             <div class="w-1/3 border-solid border-orange rounded-l-md">
-                <div class="m-10 p-4 rounded-full bg-orange w-20 h-20">
+                <div class="m-10 p-4 rounded-full bg-orange w-20 h-20 flex">
                     <img src="{{ asset('images/pencil.svg') }}" class="h-8" alt="Pencil">
-                    <h3 class="text-dark_brown font-bold text-xl" style="letter-spacing: 3px">Copywriting</h3>
+                    <h3 class="text-dark_brown font-bold text-xl ml-10" style="letter-spacing: 3px">Copywriting</h3>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote m-3 mb-9 text-shadow">
@@ -38,13 +41,11 @@
                     </blockquote>
                 </div>
             </div>
-            <div class="mt-8 lg:mt-0 w-1/3 border-solid border-orange rounded-r-md">
+            <div class="sm:mt-8 lg:mt-0 w-1/3 border-solid border-orange rounded-r-md">
                 <div class="m-10 p-4 rounded-full bg-orange w-20 h-20 flex">
                     <img src="{{ asset('images/message.svg') }}" class="h-8" alt="Message">
-                    <div class="w-full">
-                        <h3 class="text-dark_brown font-bold text-xl ml-10" style="letter-spacing: 3px">Extens
-                            Consulting</h3>
-                    </div>
+                    <span class="text-dark_brown font-bold text-xl ml-10 "
+                          style="letter-spacing: 3px">ExtensConsulting</span>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote m-3 mb-9 text-shadow">
@@ -77,7 +78,7 @@
                         </div>
                     </div>
                     <div class="col-span-2 border-blue p-2">
-                        <div class="bg-image">
+                        <div class="bg-image hover-zoom">
                             <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover h-full"
                                  alt="Picture of mac">
                             <div class="mask bg-shadow"></div>
@@ -100,30 +101,59 @@
             <h1 class="m-10 text-center text-dark_brown font-extrabold text-4xl">
                 Lorem Ipsum Dolor Sit
             </h1>
-            <div class="lg:grid lg:grid-cols-2 lg:gap-4 lg:content-start">
-                <div class="m-10 p-4 rounded-full bg-white border-orange w-32 h-20">
-                    <div class="p-2 rounded-full bg-calendly w-9 h-9 ml-72">
-                        <img src="{{ asset('images/calendly.svg') }}" class="h-5" alt="Logo Calendly">
-                        <div>Calendly</div>
+            <div class="lg:grid lg:grid-cols-2 lg:gap-4 lg:content-center">
+                <div class="flex flex-col lg:flex-row justify-center items-center">
+                    <div class="rounded-full bg-white border-orange p-3 w-1/4" style="border-width: 2px">
+                        <div class="p-2 rounded-full bg-calendly w-9 h-9 flex ml-2">
+                            <img src="{{ asset('images/calendly.svg') }}" class="h-5" alt="Logo Calendly">
+                            <div class="text-light_orange font-light ml-10">Calendly</div>
+                        </div>
                     </div>
                 </div>
-                <div class="m-10 p-2 rounded-full bg-orange w-9 h-9 ml-72">
-                    <img src="{{ asset('images/mail.svg') }}" class="h-5" alt="Mail">
-                    <div>Email</div>
+                <div class="flex flex-col lg:flex-row justify-center items-center">
+                    <div class="rounded-full bg-white border-orange p-3 w-1/4" style="border-width: 2px">
+                        <div class="p-2 rounded-full bg-orange w-9 h-9 flex ml-2">
+                            <img src="{{ asset('images/mail.svg') }}" class="h-5" alt="Logo Mail">
+                            <div class="text-light_orange font-light ml-10">Email</div>
+                        </div>
+                    </div>
                 </div>
-                <iframe class="m-12 sm:w-full lg:w-4/5 sm:h-32 lg:h-96 border-orange rounded-md"
-                        src="https://calendly.com/jay-cormier/15min">
-                </iframe>
-                <div class="m-12 sm:w-full lg:w-4/5 sm:h-32 lg:h-96 border-orange rounded-md bg-white">
-                    <form action="submit" method="post">
-                        <div>
-                            <input class="" id="mail" placeholder="Lorem ipsum"/>
-                            <label class="form-label" for="mail">Adresse mail</label>
-                        </div>
-                        <div>
-                            <input class="" placeholder="Lorem ipsum"/>
-                        </div>
-                    </form>
+                <div class="flex justify-center">
+                    <iframe class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md" style="height: 34rem"
+                            src="https://calendly.com/jay-cormier/15min">
+                    </iframe>
+                </div>
+                <div class="flex justify-center">
+                    <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 34rem">
+                        <form action="submit" method="post">
+                            <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
+                            <div class="flex justify-center">
+                                <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 1px">
+                                    <div class="p-2 w-full h-9 flex ml-2">
+                                        <img src="{{ asset('images/mail_orange.svg') }}" class="h-5 text-orange"
+                                             alt="Logo Mail">
+                                        <input class="ml-4 w-5/6" placeholder="john.doe@mail.com"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="form-label ml-16 mt-4" for="message">Message</label>
+                            <div class="flex justify-center">
+                                <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 2px">
+                                    <div class="p-2 w-full h-72 flex ml-2">
+                                        <input class="ml-4 w-5/6" placeholder="Lorem ipsum"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-center items-center my-4">
+                                <button type="submit" class="rounded-md bg-white border-orange w-1/6"
+                                        style="border-width: 2px">
+                                    <div class="my-1 text-orange">
+                                        Envoyer
+                                    </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
