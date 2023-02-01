@@ -6,7 +6,7 @@ controllers:
 
 home:
     path: /
-    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateCont roller::templateAction
     defaults:
         template: home/home.html.twig
 
@@ -32,6 +32,12 @@ admin:
     path: /admin
     controller: App\Controller\AdminController::home
     methods: GET|POST
+
+tag:
+    path: /backoffice
+    controller: App\Controller\TagController::createTag
+    methods: GET|POST
+
 
 login:
     path: /login
