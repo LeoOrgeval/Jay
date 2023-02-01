@@ -8,6 +8,8 @@ class AuthController
 {
     function login(Request $request): void
     {
+        $email = $request->request->get('email');
+        $password = $request->request->get('password');
         dd($request);
     }
 }

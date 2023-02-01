@@ -1,22 +1,32 @@
-{% extends 'base.html.twig' %}
-
-{% block content %}
-    <!-- 1st page - Cover -->
-    <title>A propos</title>
-    <div class="py-12 tracking-widest bg-blue text-center text-white text-6xl font-black">
+<div class="bg-cream pt-10 pb-32">
+    <h6 class="text-center text-orange font-light tracking-widest uppercase">
         Lorem Ipsum
+    </h6>
+    <h1 class="m-10 text-center text-dark_brown font-black text-5xl">
+        Lorem Ipsum
+    </h1>
+    <div>
+        <h6 class="ml-28 mt-28 text-dark_brown font-medium text-4xl">
+            Lorem Ipsum
+        </h6>
     </div>
-    <!-- 2nd page - Service -->
-    <div class="py-8 bg-cream text-center">
-        <div class="flex justify-center grid-cols-2 ">
-            <div class="w-3/4">
-
-            </div>
-            <div class="m-5 text-dark_brown w-4/5">
-                <h3 class="text-dark_brown font-extrabold text-2xl">
-                    Lorem Ipsum Dolor Sit
-                </h3>
-                <div class="mt-8">
+    <div class="flex justify-end">
+        <div class="bg-image mr-72 mt-10 rounded-md w-72 absolute z-50" style="aspect-ratio: 2/1">
+            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
+                 alt="Picture of phone">
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <div class="bg-image ml-96 mt-28 rounded-md w-96 absolute" style="aspect-ratio: 1/1">
+            <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover w-full h-full"
+                 alt="Picture of phone">
+        </div>
+    </div>
+    <!-- Contains -->
+    <div class="my-20 ml-16">
+        <div class="w-2/5">
+            <div class="m-5 text-black">
+                <div>
                     Lort, consectetur adipiscing elit. Sed non risus. Suspendisse tortor,
                     dignissim sit, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa,
                     varius a, semper congue, euismod non, mi. porttitor, orci nec nonummy molestie, enim est
@@ -49,6 +59,20 @@
                 </div>
             </div>
         </div>
+        <div class="flex justify-center">
+            <div class="-mt-40 mr-6 p-2 rounded-full bg-orange w-8 h-8">
+                <img src="{{ asset('images/check.svg') }}" class="h-4" alt="Check">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="-mt-24 mr-6 p-2 rounded-full bg-orange w-8 h-8">
+                <img src="{{ asset('images/check.svg') }}" class="h-4" alt="Check">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="-mt-8 mr-6 p-2 rounded-full bg-orange w-8 h-8">
+                <img src="{{ asset('images/check.svg') }}" class="h-4" alt="Check">
+            </div>
+        </div>
     </div>
-{% endblock %}
-
+</div>

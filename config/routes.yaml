@@ -8,30 +8,30 @@ home:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
-        template: default/home.html.twig
+        template: home/home.html.twig
 
 about:
     path: /about
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
-        template: default/about.html.twig
+        template: about/about.html.twig
 
 service:
     path: /service
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
-        template: default/service.html.twig
+        template: service/service.html.twig
 
 projects:
     path: /projects
     controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
-        template: default/projects.html.twig
+        template: projects/projects.html.twig
 
 admin:
     path: /admin
     controller: App\Controller\AdminController::home
-    methods: GET
+    methods: GET|POST
 
 login:
     path: /login

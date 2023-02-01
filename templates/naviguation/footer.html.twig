@@ -1,0 +1,161 @@
+<div class="bg-blue">
+    <div class="sm:mx-20 lg:mx-40 grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+        <span class="text-white font-bold sm:my-16 lg:my-28">Jay Cormier</span>
+        <div class="sm:mt-16 lg:mt-28">
+            <h3 class="text-orange text-sm uppercase" style="letter-spacing: 3px">
+                Plan du site
+            </h3>
+            <div class="sm:mt-3 lg:mt-8">
+                <a class="text-white text-sm" href="{{ url('home') }}">Accueil</a><br>
+                <a class="text-white text-sm" href="{{ url('about') }}">A propos</a><br>
+                <a class="text-white text-sm" href="{{ url('service') }}">Service</a><br>
+                <a class="text-white text-sm" href="{{ url('projects') }}">Projets</a><br>
+            </div>
+        </div>
+        <div class="sm:mt-16 lg:mt-28">
+            <h3 class="text-orange text-sm uppercase" style="letter-spacing: 3px">Me contacter</h3>
+
+
+            <!-- Button trigger Contact Footer -->
+            <button type="button" class="btn btn-outline-white sm:mt-3 lg:mt-10" data-mdb-toggle="modal"
+                    data-mdb-target="#formChoose" data-mdb-ripple-color="white">
+                Contact
+            </button>
+            <!-- First modal dialog -->
+            <div class="modal fade" id="formChoose" aria-hidden="true" aria-labelledby="formChooseModal"
+                 tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-blue w-full">
+                            <h5 class="modal-title text-white font-bold ml-2" id="formChooseModal">Lorem Ipsum</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-blue flex items-center justify-evenly py-10">
+
+                            <button type="button" class="btn btn-info sm:mt-3 lg:mt-10"
+                                    data-mdb-toggle="modal"
+                                    data-mdb-target="#formCalendly">
+                                Calendly
+                            </button>
+                            <button type="button" class="btn btn-warning sm:mt-3 lg:mt-10"
+                                    data-mdb-toggle="modal"
+                                    data-mdb-target="#formMail">
+                                Email
+                            </button>
+
+                        </div>
+                        <div class="modal-footer flex justify-center">
+                            <div>
+                                Lorem ipsum
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Calendly modal dialog -->
+            <div class="modal fade" id="formCalendly" aria-hidden="true" aria-labelledby="formCalendlyModal"
+                 tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-blue w-full">
+                            <div class="flex justify-center">
+                                <div class="p-2 rounded-full bg-calendly w-9 h-9 flex">
+                                    <img src="{{ asset('images/calendly.svg') }}" class="h-5"
+                                         alt="Logo Calendly">
+                                </div>
+                            </div>
+                            <h5 class="modal-title text-white font-bold ml-2" id="formCalendlyModal">Contact par
+                                Calendly</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body bg-cream">
+                            <div class="flex justify-center">
+                                <iframe class="sm:w-full lg:w-5/6 sm:h-32 border-orange rounded-md"
+                                        style="height: 30rem"
+                                        src="https://calendly.com/jay-cormier/15min">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-mdb-target="#formMail" data-mdb-toggle="modal"
+                                    data-mdb-dismiss="modal">
+                                Contact par mail >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mail modal dialog -->
+            <div class="modal fade" id="formMail" aria-hidden="true" aria-labelledby="formMailModal"
+                 tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header w-full bg-blue">
+                            <div class="flex items-center">
+                                <div class="p-2 rounded-full bg-orange w-9 h-9">
+                                    <img src="{{ asset('images/mail.svg') }}" class="h-5" alt="Logo Mail">
+                                </div>
+                                <h5 class="modal-title ml-2 font-bold text-white" id="formMailModal">Contact par
+                                    mail</h5>
+                            </div>
+                        </div>
+                        <div class="modal-body bg-cream" style="height: 30rem">
+                            <form action="submit" method="post">
+                                <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
+                                <div class="flex justify-center">
+                                    <div class="rounded-md bg-white border-shadow w-4/5"
+                                         style="border-width: 1px">
+                                        <div class="p-2 w-full h-9 flex ml-2">
+                                            <img src="{{ asset('images/mail_orange.svg') }}"
+                                                 class="h-5 text-orange"
+                                                 alt="Logo Mail">
+                                            <input class="ml-4 w-5/6" placeholder="john.doe@mail.com"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label class="form-label ml-16 mt-4" for="message">Message</label>
+                                <div class="flex justify-center">
+                                    <div class="rounded-md bg-white border-shadow w-4/5"
+                                         style="border-width: 2px">
+                                        <div class="p-2 w-full h-60 flex ml-2">
+                                            <input class="ml-4 w-5/6" placeholder="Lorem ipsum"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center items-center my-4">
+                                    <button type="submit" class="rounded-md bg-white border-orange w-1/6"
+                                            style="border-width: 2px">
+                                        <div class="my-1 text-orange">
+                                            Envoyer
+                                        </div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" data-mdb-target="#formCalendly" data-mdb-toggle="modal">
+                                < Contact par Calendly
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="block p-2.5 rounded-full bg-orange w-10 h-10 sm:mt-1 lg:mt-4"
+               href="https://www.linkedin.com/in/jcormier/">
+                <img src="{{ asset('images/linkedin.svg') }}"
+                     class="w-full" alt="Message">
+            </a>
+        </div>
+    </div>
+    <hr class="text-white sm:mt-4 lg:mt-12">
+    <div class="text-center text-white sm:py-4 lg:py-12">
+        Copyright © 2023 Jay Cormier.
+    </div>
+</div>
+<!-- MDB -->
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+></script>

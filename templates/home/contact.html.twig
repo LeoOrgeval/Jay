@@ -1,0 +1,70 @@
+<div class="bg-cream pt-10 pb-10">
+    <h6 class="text-center text-orange font-light tracking-widest uppercase">
+        Contact
+    </h6>
+    <h1 class="m-10 text-center text-dark_brown font-extrabold text-4xl">
+        Lorem Ipsum Dolor Sit
+    </h1>
+    <div class="lg:grid lg:grid-cols-2 lg:gap-4 lg:content-center">
+        <div class="flex flex-col lg:flex-row justify-center items-center">
+            <div class="rounded-full bg-white border-orange p-3 w-1/4" style="border-width: 2px">
+                <div class="p-2 rounded-full bg-calendly w-9 h-9 flex ml-2">
+                    <img src="{{ asset('images/calendly.svg') }}" class="h-5" alt="Logo Calendly">
+                    <div class="text-light_orange font-light ml-10">Calendly</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-center items-center">
+            <div class="rounded-full bg-white border-orange p-3 w-1/4" style="border-width: 2px">
+                <div class="p-2 rounded-full bg-orange w-9 h-9 flex ml-2">
+                    <img src="{{ asset('images/mail.svg') }}" class="h-5" alt="Logo Mail">
+                    <div class="text-light_orange font-light ml-10">Email</div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            Lorem ipsum
+        </div>
+        <div class="flex justify-center">
+            Lorem ipsum
+        </div>
+        <div class="flex justify-center">
+            <iframe class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md" style="height: 34rem"
+                    src="https://calendly.com/jay-cormier/15min">
+            </iframe>
+        </div>
+        <div class="flex justify-center">
+            <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 34rem">
+                <form action="submit" method="post">
+                    <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
+                    <div class="flex justify-center">
+                        <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 1px">
+                            <div class="p-2 w-full h-9 flex ml-2">
+                                <img src="{{ asset('images/mail_orange.svg') }}" class="h-5 text-orange"
+                                     alt="Logo Mail">
+                                <input class="ml-4 w-5/6" placeholder="john.doe@mail.com"/>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="form-label ml-16 mt-4" for="message">Message</label>
+                    <div class="flex justify-center">
+                        <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 2px">
+                            <div class="p-2 w-full h-72 flex ml-2">
+                                <input class="ml-4 w-5/6" placeholder="Lorem ipsum"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center my-4">
+                        <button type="submit" class="rounded-md bg-white border-orange w-1/6"
+                                style="border-width: 2px">
+                            <div class="my-1 text-orange">
+                                Envoyer
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

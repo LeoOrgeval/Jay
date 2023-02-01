@@ -1,10 +1,18 @@
 doctrine:
     dbal:
-        url: '%env(resolve:DATABASE_URL)%'
-
-        # IMPORTANT: You MUST configure your server version,
-        # either here or in the DATABASE_URL env var (see .env file)
-        #server_version: '15'
+        dbname: db_jay
+        host: localhost
+        port: 3306
+        user: root
+        password:
+        driver: pdo_mysql
+        # if the url option is specified, it will override the above config
+        url: mysql://root:@127.0.0.1:3306/db_jay
+        # the DBAL driverClass option
+        driver_class: App\DBAL\MyDatabaseDriver
+        memory: true
+        charset: utf8mb4
+        server_version: '5.7'
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true

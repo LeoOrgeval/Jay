@@ -9,8 +9,8 @@ create table admin
     last_name varchar(255) not null,
     email varchar(255) not null,
     password varchar(255) not null
-    )
-)
+    )engine innoDB;
+
 
 create table tags
 (
@@ -34,3 +34,7 @@ values (?);
 
 insert into card (title, image_url, link_url, description)
 values (?, ?, ?, ?);
+
+
+insert into admin (first_name, last_name, email, password)
+values (?, ?, ?, ?)
