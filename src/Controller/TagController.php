@@ -13,6 +13,7 @@ class TagController extends AbstractController
 {
     public function createTag(ManagerRegistry $doctrine, Request $request): Response
     {
+
         $tag = new Tag();
 
         $form = $this->createForm(TagType::class, $tag);
@@ -36,22 +37,29 @@ class TagController extends AbstractController
                 $em->persist($tag);
                 $em->flush();
 
+                $tags = $doctrine->getRepository(Tag::class)->findAll();
+
                 return $this->render(
-                    'admin/backoffice.html.twig',
-                    ['tag' => $form]
+                    'admin/tag.html.twig',
+                    ['tag' => $form, 'tags' => $tags]
                 );
             }
 
-            dd('Le tag existe déjà');
+            $tags = $doctrine->getRepository(Tag::class)->findAll();
+
             //Il faut que je retourne une erreur comme quoi il existe déjà
             return $this->render(
-                'admin/backoffice.html.twig',
-                ['tag' => $form]
+                'admin/tag.html.twig',
+                ['tag' => $form, 'tags' => $tags]
             );
         }
+        $tags = $doctrine->getRepository(Tag::class)->findAll();
+
         return $this->render(
-            'admin/backoffice.html.twig',
-            ['tag' => $form]
+            'admin/tag.html.twig',
+            ['tag' => $form, 'tags' => $tags]
+
+
         );
     }
 
@@ -59,5 +67,6 @@ class TagController extends AbstractController
     {
 
     }
+
 
 }
