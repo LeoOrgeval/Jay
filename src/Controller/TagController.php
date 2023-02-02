@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Tag;
 use App\Form\TagType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Persistence\ManagerRegistry;
@@ -63,10 +64,29 @@ class TagController extends AbstractController
         );
     }
 
-    public function deleteTag(ManagerRegistry $doctrine, Request $request): void
+    public function removeTag(ManagerRegistry $doctrine, int $id): RedirectResponse
     {
+        $em = $doctrine->getManager();
+        $tag = $em->getRepository(Tag::class)->find($id);
+
+        if($tag) {
+            $em->remove($tag);
+            $em->flush();
+        }
+        return $this->redirectToRoute('tag');
 
     }
+    public function editTag(ManagerRegistry $doctrine, int $id): RedirectResponse
+    {
+        $em = $doctrine->getManager();
+        $tag = $em->getRepository(Tag::class)->find($id);
 
+        if($tag) {
+            $em->remove($tag);
+            $em->flush();
+        }
+        return $this->redirectToRoute('tag');
+
+    }
 
 }

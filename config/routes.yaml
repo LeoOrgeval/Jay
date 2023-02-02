@@ -44,6 +44,31 @@ tag:
     controller: App\Controller\TagController::createTag
     methods: GET|POST
 
+removeTag:
+    path: /backoffice/tag/removeTag/{id}
+    controller: App\Controller\TagController::removeTag
+    methods: GET
+    requirements:
+        id: '\d+'
+
+editTag:
+    path: /backoffice/tag/editTag/{id}
+    controller: App\Controller\TagController::editTag
+    methods: GET
+    requirements:
+        id: '\d+'
+
+card:
+    path: /backoffice/card
+    controller: App\Controller\CardController::createCard
+    methods: GET|POST
+
+removeCard:
+    path: /backoffice/card/removeCard/{id}
+    controller: App\Controller\CardController::removeCard
+    methods: GET
+    requirements:
+        id: '\d+'
 
 login:
     path: /login

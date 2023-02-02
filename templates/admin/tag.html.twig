@@ -25,7 +25,17 @@
                 <div class="mt-2 ml-20">
                     <ul>
                         {% for tag in tags %}
-                            <li>{{ tag.title }}</li>
+                            <div class="mt-2 flex">
+                                <div class="mr-2">
+                                    <a href="tag/editTag/{{ tag.id }}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </div>
+                                <a href="tag/removeTag/{{ tag.id }}">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                                <li class="ml-2">{{ tag.title }}</li>
+                            </div>
                         {% endfor %}
                     </ul>
                 </div>

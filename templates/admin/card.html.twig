@@ -12,20 +12,30 @@
         <div class="flex justify-evenly grid-cols-2">
             <div>
                 <div class="mt-4 ml-20 font-medium text-xl">
-                    Créer un tag:
+                    Créer un projet:
                 </div>
                 <div class="mt-2 ml-20">
-                    {{ form(tag) }}
+                    {{ form(card) }}
                 </div>
             </div>
             <div>
                 <div class="mt-4 ml-20 font-medium text-xl">
-                    Liste des tags:
+                    Liste des projets:
                 </div>
                 <div class="mt-2 ml-20">
                     <ul>
-                        {% for tag in tags %}
-                            <li>{{ tag.title }}</li>
+                        {% for card in cards %}
+                            <div class="mt-2 flex">
+                                <div class="mr-2">
+                                <a href="card/editCard/{{ card.id }}">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                </div>
+                                <a href="card/removeCard/{{ card.id }}">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                                <li class="ml-2">{{ card.title }}</li>
+                            </div>
                         {% endfor %}
                     </ul>
                 </div>
