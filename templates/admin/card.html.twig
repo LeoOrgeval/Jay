@@ -15,7 +15,25 @@
                     Créer un projet:
                 </div>
                 <div class="mt-2 ml-20">
-                    {{ form(card) }}
+                    {{ form_start(card) }}
+                    <div class="form-group">
+                        {{ form_label(card.title) }}
+                        {{ form_widget(card.title, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(card.image_url) }}
+                        {{ form_widget(card.image_url, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(card.link_url) }}
+                        {{ form_widget(card.link_url, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(card.description) }}
+                        {{ form_widget(card.description, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    {{ form_widget(card.save, { 'attr': {'class': 'btn btn-primary'} }) }}
+                    {{ form_end(card) }}
                 </div>
             </div>
             <div>
@@ -27,9 +45,9 @@
                         {% for card in cards %}
                             <div class="mt-2 flex">
                                 <div class="mr-2">
-                                <a href="card/editCard/{{ card.id }}">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
+                                    <a href="card/editCard/{{ card.id }}">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
                                 </div>
                                 <a href="card/removeCard/{{ card.id }}">
                                     <i class="fa-solid fa-trash"></i>

@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use function PHPUnit\Framework\throwException;
 
 class TagController extends AbstractController
 {
@@ -76,17 +77,73 @@ class TagController extends AbstractController
         return $this->redirectToRoute('tag');
 
     }
-    public function editTag(ManagerRegistry $doctrine, int $id): RedirectResponse
+
+
+
+   /* public function editTag(Request $request, ManagerRegistry $doctrine, int $id): RedirectResponse
+    {
+        $data = $request->request->all();
+        $em = $doctrine->getManager();
+        $tag = $em->getRepository(Tag::class)->find($id);
+
+        if (!array_key_exists('title', $data)) {
+            return $this->redirectToRoute('edit_tag', ['id' => $id]);
+        }
+
+        $tag->setTitle($data['title']);
+        $em->flush();
+
+        return $this->redirectToRoute('edit_tag', ['id' => $id]);
+
+
+
+        /*        $em = $doctrine->getManager();
+                $tag = $em->getRepository(Tag::class)->find($id);
+
+                if($tag) {
+                    return $this->redirectToRoute('./editTag/'.$id);
+                }
+
+
+                return $this->redirectToRoute('tag');
+
+    }*/
+
+    public function editTag(ManagerRegistry $doctrine, Request $request, int $id)
     {
         $em = $doctrine->getManager();
         $tag = $em->getRepository(Tag::class)->find($id);
 
-        if($tag) {
-            $em->remove($tag);
-            $em->flush();
-        }
-        return $this->redirectToRoute('tag');
+        $form = $this->createForm(TagType::class, $tag);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $tag = $form->getData();
+            $em->persist($tag);
+            $em->flush();
+
+            return $this->redirectToRoute('tag');
+        }
+
+        return $this->render('admin/editTag.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
+
+
+
+    public function editTagForm(ManagerRegistry $doctrine, int $id, Request $request): Response
+    {
+        $em = $doctrine->getManager();
+        $tag = $em->getRepository(Tag::class)->find($id);
+
+        $form = $this->createForm(TagType::class, $tag);
+
+        return $this->render(
+            'admin/editTag.html.twig',
+            ['tag' => $form, 'id' => $id]
+        );
+    }
+
 
 }

@@ -15,7 +15,13 @@
                     Créer un tag:
                 </div>
                 <div class="mt-2 ml-20">
-                    {{ form(tag) }}
+                    {{ form_start(tag) }}
+                    <div class="form-group">
+                        {{ form_label(tag.title) }}
+                        {{ form_widget(tag.title, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    {{ form_widget(tag.save, { 'attr': {'class': 'btn btn-primary'} }) }}
+                    {{ form_end(tag) }}
                 </div>
             </div>
             <div>

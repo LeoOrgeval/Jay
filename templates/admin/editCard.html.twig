@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+    <!-- 1st page - Cover -->
+    <title>Admin</title>
+    <div class="bg-cream py-10">
+        <div class="font-black text-3xl ml-10">
+            <a href="/backoffice"><< Menu</a>
+        </div>
+        <div class="font-black text-3xl ml-10 mt-10">
+            <a href="/backoffice/card">< Retour</a>
+        </div>
+        <div class="flex justify-evenly grid-cols-2">
+            <div>
+                <div class="mt-4 ml-20 font-medium text-xl">
+                    Modifier le projet
+                </div>
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                        {{ form_label(form.title) }}
+                        {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.image_url) }}
+                        {{ form_widget(form.image_url, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.link_url) }}
+                        {{ form_widget(form.link_url, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.description) }}
+                        {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    {{ form_widget(form.save, { 'attr': {'class': 'btn btn-primary'} }) }}
+                    {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    <!-- 5th page - Footer -->
+
+{% endblock %}
