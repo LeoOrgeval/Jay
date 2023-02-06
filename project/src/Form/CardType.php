@@ -15,6 +15,7 @@ class CardType extends AbstractType
         $builder
             ->add('title')
             ->add('image_url')
+            ->add('desc_image')
             ->add('link_url')
             ->add('description')
             ->add('save', SubmitType::class);

@@ -1,9 +1,12 @@
-{% extends 'templates/base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block content %}
     <!-- 1st page - Cover -->
     {{ include('projects/cover.html.twig') }}
     <!-- 2nd page -->
-    {{ include('projects/cards.html.twig') }}
+    <div class="bg-cream py-12">
+        {{ include('projects/filtres.html.twig') }}
+        {{ include('projects/cards.html.twig') }}
+    </div>
 {% endblock %}
 

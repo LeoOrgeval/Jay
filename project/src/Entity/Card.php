@@ -31,6 +31,9 @@ class Card
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'cards')]
     private Collection $tags;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $desc_image = null;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -109,6 +112,18 @@ class Card
     public function removeTag(Tag $tag): self
     {
         $this->tags->removeElement($tag);
+
+        return $this;
+    }
+
+    public function getDescImage(): ?string
+    {
+        return $this->desc_image;
+    }
+
+    public function setDescImage(?string $desc_image): self
+    {
+        $this->desc_image = $desc_image;
 
         return $this;
     }

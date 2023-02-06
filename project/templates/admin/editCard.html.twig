@@ -17,25 +17,29 @@
                 <div class="mt-4 ml-20 font-medium text-xl">
                     Modifier le projet
                 </div>
-                    {{ form_start(form) }}
-                    <div class="form-group">
-                        {{ form_label(form.title) }}
-                        {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.image_url) }}
-                        {{ form_widget(form.image_url, { 'attr': {'class': 'form-control'} }) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.link_url) }}
-                        {{ form_widget(form.link_url, { 'attr': {'class': 'form-control'} }) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.description) }}
-                        {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
-                    </div>
-                    {{ form_widget(form.save, { 'attr': {'class': 'btn btn-primary'} }) }}
-                    {{ form_end(form) }}
+                {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_label(form.title) }}
+                    {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.image_url) }}
+                    {{ form_widget(form.image_url, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.desc_image) }}
+                    {{ form_widget(form.desc_image, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.link_url) }}
+                    {{ form_widget(form.link_url, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.description) }}
+                    {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                {{ form_widget(form.save, { 'attr': {'class': 'btn btn-primary'} }) }}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>

@@ -25,6 +25,10 @@
                         {{ form_widget(card.image_url, { 'attr': {'class': 'form-control'} }) }}
                     </div>
                     <div class="form-group">
+                        {{ form_label(card.desc_image) }}
+                        {{ form_widget(card.desc_image, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="form-group">
                         {{ form_label(card.link_url) }}
                         {{ form_widget(card.link_url, { 'attr': {'class': 'form-control'} }) }}
                     </div>
