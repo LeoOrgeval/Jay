@@ -1,18 +1,18 @@
 doctrine:
     dbal:
-        dbname: db_jay
+        dbname: jay
         host: localhost
         port: 3306
         user: root
         password:
         driver: pdo_mysql
         # if the url option is specified, it will override the above config
-        url: mysql://root:@127.0.0.1:3306/db_jay
+        url: mysql://root:@database:3306/jay
         # the DBAL driverClass option
         driver_class: App\DBAL\MyDatabaseDriver
         memory: true
         charset: utf8mb4
-        server_version: '5.7'
+        server_version: '8'
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true

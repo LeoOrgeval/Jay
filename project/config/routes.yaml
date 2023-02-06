@@ -6,7 +6,7 @@ controllers:
 
 home:
     path: /
-    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateCont roller::templateAction
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     defaults:
         template: home/home.html.twig
 
