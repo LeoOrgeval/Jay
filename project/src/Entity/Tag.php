@@ -69,4 +69,12 @@ class Tag
 
         return $this;
     }
+
+    public function getCategory()
+    {
+    }
+
+    public function setCategory($null)
+    {
+    }
 }

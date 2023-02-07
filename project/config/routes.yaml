@@ -73,10 +73,6 @@ editTag:
     requirements:
         id: '\d+'
 
-edit_tag:
-    path: /backoffice/editTag/{id}
-    controller: App\Controller\TagController::editTagForm
-
 
 card:
     path: /backoffice/card
@@ -97,10 +93,6 @@ editCard:
     methods: GET|PUT|POST
     requirements:
         id: '\d+'
-
-edit_card:
-    path: /backoffice/editCard/{id}
-    controller: App\Controller\CardController::editCardForm
 
 
 login:

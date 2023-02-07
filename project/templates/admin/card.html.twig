@@ -36,6 +36,10 @@
                         {{ form_label(card.description) }}
                         {{ form_widget(card.description, { 'attr': {'class': 'form-control'} }) }}
                     </div>
+                    <div class="form-group">
+                        {{ form_label(card.tags) }}
+                        {{ form_widget(card.tags) }}
+                    </div>
                     {{ form_widget(card.save, { 'attr': {'class': 'btn btn-primary'} }) }}
                     {{ form_end(card) }}
                 </div>

@@ -80,34 +80,6 @@ class TagController extends AbstractController
 
 
 
-   /* public function editTag(Request $request, ManagerRegistry $doctrine, int $id): RedirectResponse
-    {
-        $data = $request->request->all();
-        $em = $doctrine->getManager();
-        $tag = $em->getRepository(Tag::class)->find($id);
-
-        if (!array_key_exists('title', $data)) {
-            return $this->redirectToRoute('edit_tag', ['id' => $id]);
-        }
-
-        $tag->setTitle($data['title']);
-        $em->flush();
-
-        return $this->redirectToRoute('edit_tag', ['id' => $id]);
-
-
-
-        /*        $em = $doctrine->getManager();
-                $tag = $em->getRepository(Tag::class)->find($id);
-
-                if($tag) {
-                    return $this->redirectToRoute('./editTag/'.$id);
-                }
-
-
-                return $this->redirectToRoute('tag');
-
-    }*/
 
     public function editTag(ManagerRegistry $doctrine, Request $request, int $id)
     {
@@ -132,7 +104,7 @@ class TagController extends AbstractController
 
 
 
-    public function editTagForm(ManagerRegistry $doctrine, int $id, Request $request): Response
+/*    public function editTagForm(ManagerRegistry $doctrine, int $id, Request $request): Response
     {
         $em = $doctrine->getManager();
         $tag = $em->getRepository(Tag::class)->find($id);
@@ -143,7 +115,7 @@ class TagController extends AbstractController
             'admin/editTag.html.twig',
             ['tag' => $form, 'id' => $id]
         );
-    }
+    }*/
 
 
 }

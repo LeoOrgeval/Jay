@@ -1,20 +1,24 @@
 <div class="text-orange font-bold text-xl ml-20">
-    Extens Consulting
+    Copywriting
 </div>
 
 
 <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
-    {% for card in cards %}
-        <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ card.imageUrl }}"
-                                                               class="object-cover w-full h-full"
-                                                               alt="{{ card.descImage }}">
-            <a href="{{ card.linkUrl }}" target="_blank"> <div class="mask"
-                 style="background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(0,0,0,0.75));"></div></a>
-            <span class="tag tag-title">Copywriting</span>
-            <span class="project-title">{{ card.title }}</span>
-        </div>
-    {% endfor %}
+        {% for card in cards %}
+            {% for tag in card.tags %}
+                {% if tag.title == "Copywriting" %}
+                    <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+                        <img src="{{ card.imageUrl }}"
+                             class="object-cover w-full h-full"
+                             alt="{{ card.descImage }}">
+                        <a href="{{ card.linkUrl }}" target="_blank"> <div class="mask"
+                                                                           style="background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(0,0,0,0.75));"></div></a>
+                        <span class="tag tag-title">{{ tag.title }}</span>
+                        <span class="project-title">{{ card.title }}</span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
 </div>
 
 

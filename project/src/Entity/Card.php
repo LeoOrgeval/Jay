@@ -111,7 +111,13 @@ class Card
 
     public function removeTag(Tag $tag): self
     {
-        $this->tags->removeElement($tag);
+        if ($this->tags->contains($tag)) {
+            $this->tags->removeElement($tag);
+            // set the owning side to null (unless already changed)
+            if ($tag->getCategory() === $this) {
+                $tag->setCategory(null);
+            }
+        }
 
         return $this;
     }

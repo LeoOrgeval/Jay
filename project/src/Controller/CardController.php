@@ -31,25 +31,10 @@ class CardController extends AbstractController
             ]);
 
             if (!$exist) {
-
                 $em = $doctrine->getManager();
                 $em->persist($card);
                 $em->flush();
-
-                $cards = $doctrine->getRepository(Card::class)->findAll();
-
-                return $this->render(
-                    'admin/card.html.twig',
-                    ['card' => $form, 'cards' => $cards]
-                );
             }
-
-            $cards = $doctrine->getRepository(Card::class)->findAll();
-
-            return $this->render(
-                'admin/card.html.twig',
-                ['card' => $form, 'cards' => $cards]
-            );
         }
 
         $cards = $doctrine->getRepository(Card::class)->findAll();
@@ -77,42 +62,6 @@ class CardController extends AbstractController
 
     }
 
-    /*public function editCard(int $id, Request $request, ManagerRegistry $doctrine)
-    {
-
-
-        $data = $request->request->all();
-        $em = $doctrine->getManager();
-        $card = $em->getRepository(Card::class)->find($id);
-
-        if (!array_key_exists('title', $data)) {
-            return $this->redirectToRoute('edit_card', ['id' => $id]);
-        }
-
-        $card->setTitle($data['title']);
-        $em->flush();
-
-        return $this->redirectToRoute('edit_card', ['id' => $id]);
-
-
-        /*$em = $doctrine->getManager();
-        $card = $em->getRepository(Card::class)->find($id);
-
-        $form = $this->createForm(CardType::class, $card);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em->flush();
-
-            return $this->redirectToRoute('card');
-        }
-
-        return $this->redirectToRoute('editCard', ['id' => $id]);
-
-}*/
-
-
     public function editCard(ManagerRegistry $doctrine, Request $request, int $id)
     {
         $em = $doctrine->getManager();
@@ -135,7 +84,7 @@ class CardController extends AbstractController
     }
 
 
-    public function editCardForm(ManagerRegistry $doctrine, int $id, Request $request): Response
+/*    public function editCardForm(ManagerRegistry $doctrine, int $id, Request $request): Response
     {
         $em = $doctrine->getManager();
         $card = $em->getRepository(Card::class)->find($id);
@@ -146,5 +95,20 @@ class CardController extends AbstractController
             'admin/editCard.html.twig',
             ['card' => $form, 'id' => $id]
         );
-    }
+    }*/
+
+
+    /*public function addTag(ManagerRegistry $doctrine, int $id, int $tagId): RedirectResponse
+    {
+        $em = $doctrine->getManager();
+        $card = $em->getRepository(Card::class)->find($id);
+        $tag = $em->getRepository(Tag::class)->find($tagId);
+
+        $card->addTag($tag);
+        $em->persist($card);
+        $em->flush();
+
+        return $this->redirectToRoute('card');
+    }*/
+
 }
