@@ -12,10 +12,9 @@ class ProjectController extends AbstractController
 {
     public function getCardsTags(ManagerRegistry $doctrine): Response
     {
-
-
         $cards = $doctrine->getRepository(Card::class)->findAll();
         $tags = $doctrine->getRepository(Tag::class)->findAll();
+
 
         return $this->render(
             'projects/projects.html.twig',
