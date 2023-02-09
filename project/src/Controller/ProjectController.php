@@ -33,4 +33,18 @@ class ProjectController extends AbstractController
             ['tags' => $tags, 'tag' => $tag, 'cards' => $cards]
         );
     }
+
+    public function getLastCards(ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+
+        $tags = $doctrine->getRepository(Tag::class)->findAll();
+        $cards = $em->getRepository(Card::class);
+        $cards = $cards->findBy([], ['id' => 'DESC'], 3);
+
+        return $this->render(
+            'home/home.html.twig',
+            ['tags' => $tags, 'cards' => $cards]
+        );
+    }
 }
