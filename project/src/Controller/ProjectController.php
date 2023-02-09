@@ -38,13 +38,13 @@ class ProjectController extends AbstractController
     {
         $em = $doctrine->getManager();
 
-        $tags = $doctrine->getRepository(Tag::class)->findAll();
         $cards = $em->getRepository(Card::class);
         $cards = $cards->findBy([], ['id' => 'DESC'], 3);
+        $tagsByCard = $em->getRepository(Card::class)->getTagsByCard($cards);
 
         return $this->render(
             'home/home.html.twig',
-            ['tags' => $tags, 'cards' => $cards]
+            ['tags' => $tagsByCard, 'cards' => $cards]
         );
     }
 }

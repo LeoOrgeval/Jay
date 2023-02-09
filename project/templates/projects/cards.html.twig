@@ -3,29 +3,29 @@
 </div>
 
 
-            <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
-                {% for card in cards %}
+<div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
+    {% for card in cards %}
 
-                <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-                        <img src="{{ card.imageUrl }}"
-                             class="object-cover w-full h-full"
-                             alt="{{ card.descImage }}">
-                        <a href="{{ card.linkUrl }}" target="_blank">
-                            <div class="mask"></div>
-                        </a>
-                        <ul>
-                            {% for tag in card.tags %}
-                                <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
-                            {% endfor %}
-                        </ul>
-                        <span class="project-title">{{ card.title }}</span>
-                    </div>
+        <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+            <img src="{{ card.imageUrl }}"
+                 class="object-cover w-full h-full"
+                 alt="{{ card.descImage }}">
+            <a href="{{ card.linkUrl }}" target="_blank">
+                <div class="mask"></div>
+            </a>
+            <ul>
+                {% for tag in card.tags %}
+                    <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
                 {% endfor %}
+            </ul>
+            <span class="project-title">{{ card.title }}</span>
+        </div>
+    {% endfor %}
 
-            </div>
+</div>
 
 
-{#{% set displayedTags = [] %}
+{# {% set displayedTags = [] %}
 
 {% for card in cards %}
     {% for tag in card.tags %}
@@ -55,4 +55,4 @@
             {% set displayedTags = displayedTags|merge([tag.title]) %}
         {% endif %}
     {% endfor %}
-{% endfor %}#}
+{% endfor %} #}
