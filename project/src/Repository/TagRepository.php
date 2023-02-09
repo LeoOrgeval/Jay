@@ -39,6 +39,19 @@ class TagRepository extends ServiceEntityRepository
         }
     }
 
+    public function getCardsByTag(int $id): array
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            'SELECT c
+            FROM App\Entity\Card c
+            JOIN c.tags t
+            WHERE t.id = :id'
+        )->setParameter('id', $id);
+
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Tag[] Returns an array of Tag objects
 //     */

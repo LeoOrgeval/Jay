@@ -33,8 +33,12 @@ projects:
     defaults:
         template: projects/projects.html.twig
 
-
-
+getFilter:
+    path: /projects/{id}
+    controller: App\Controller\ProjectController::getFilter
+    methods: GET
+    requirements:
+        id: '\d+'
 
 
 

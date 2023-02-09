@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <!-- 1st page - Cover -->
+    {{ include('projects/cover.html.twig') }}
+    <!-- 2nd page -->
+    <div class="bg-cream py-12">
+        {{ include('projects/filtres.html.twig') }}
+
+        <div class="text-orange font-bold text-xl ml-20">
+            {{ tag.title }}
+        </div>
+
+
+        <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
+            {% for card in cards %}
+
+                <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+                    <img src="{{ card.imageUrl }}"
+                         class="object-cover w-full h-full"
+                         alt="{{ card.descImage }}">
+                    <a href="{{ card.linkUrl }}" target="_blank">
+                        <div class="mask"></div>
+                    </a>
+                    <ul>
+                        {% for tag in card.tags %}
+                            <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
+                        {% endfor %}
+                    </ul>
+                    <span class="project-title">{{ card.title }}</span>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}
+
+

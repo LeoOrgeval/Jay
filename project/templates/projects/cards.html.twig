@@ -1,125 +1,58 @@
 <div class="text-orange font-bold text-xl ml-20">
-    Copywriting
+    Tous les projets
 </div>
 
 
-<div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
-        {% for card in cards %}
-            {% for tag in card.tags %}
-                {% if tag.title == "Copywriting" %}
-                    <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+            <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
+                {% for card in cards %}
+
+                <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
                         <img src="{{ card.imageUrl }}"
                              class="object-cover w-full h-full"
                              alt="{{ card.descImage }}">
-                        <a href="{{ card.linkUrl }}" target="_blank"> <div class="mask"
-                                                                           style="background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(0,0,0,0.75));"></div></a>
-                        <span class="tag tag-title">{{ tag.title }}</span>
+                        <a href="{{ card.linkUrl }}" target="_blank">
+                            <div class="mask"></div>
+                        </a>
+                        <ul>
+                            {% for tag in card.tags %}
+                                <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
+                            {% endfor %}
+                        </ul>
                         <span class="project-title">{{ card.title }}</span>
                     </div>
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-</div>
+                {% endfor %}
+
+            </div>
 
 
-{# <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
-        <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask"
-                 style="background: linear-gradient(to right, rgba(255,255,255,0.75), rgba(0,0,0,0.75));"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image hover-overlay hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask"
-                 style="background: linear-gradient(45deg, hsla(168, 85%, 52%, 0.5), hsla(263, 88%, 45%, 0.5) 100%);"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/3rd_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Extens Consulting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64">
+{#{% set displayedTags = [] %}
 
-        </div>
-    </div> #}
-<!-- Copywriting -->
-<div class="text-orange font-bold text-xl ml-20 mt-20">
-    Copywriting
-</div>
-
-
-{# <div class="flex justify-around ml-36 mt-20 grid grid-cols-4 gap-4">
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Copywriting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/2nd_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Copywriting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Copywriting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/3rd_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Copywriting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-        <div class="bg-image m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-            <img src="{{ asset('images/1st_image.jpg') }}" class="object-cover w-full h-full"
-                 alt="Picture of phone">
-            <div class="mask bg-shadow"></div>
-            <span class="tag tag-title">Copywriting</span>
-            <span class="project-title">Titre du projet</span>
-        </div>
-    </div>
-</div>
-#}
+{% for card in cards %}
+    {% for tag in card.tags %}
+        {% if tag.title not in displayedTags %}
+            <div class="text-orange font-bold text-xl ml-20">
+                {{ tag.title }}
+            </div>
+            {% set filteredCards = cards|filter(c => tag in c.tags) %}
+            <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
+                {% for card in filteredCards %}
+                    <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+                        <img src="{{ card.imageUrl }}"
+                             class="object-cover w-full h-full"
+                             alt="{{ card.descImage }}">
+                        <a href="{{ card.linkUrl }}" target="_blank">
+                            <div class="mask"></div>
+                        </a>
+                        <ul>
+                            {% for tag in card.tags %}
+                                <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
+                            {% endfor %}
+                        </ul>
+                        <span class="project-title">{{ card.title }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+            {% set displayedTags = displayedTags|merge([tag.title]) %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}#}
