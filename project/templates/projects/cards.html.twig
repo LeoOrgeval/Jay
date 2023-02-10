@@ -6,53 +6,32 @@
 <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
     {% for card in cards %}
 
-        <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+        <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64 rounded-4 drop-shadow-2xl"
+             style="aspect-ratio: 3/5">
+
             <img src="{{ card.imageUrl }}"
                  class="object-cover w-full h-full"
                  alt="{{ card.descImage }}">
             <a href="{{ card.linkUrl }}" target="_blank">
-                <div class="mask"></div>
+                {% if card.description is not empty %}
+                <div class="middle">
+                    <div class="text">
+                        {{ card.description }}
+                    </div>
+                </div>
+                {% endif %}
             </a>
             <ul>
+                <div class="mt-8">
                 {% for tag in card.tags %}
-                    <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
+                    <li class="flex tag tag-title -mt-14">{{ tag.title }}</li>
                 {% endfor %}
+                </div>
             </ul>
             <span class="project-title">{{ card.title }}</span>
         </div>
     {% endfor %}
-
 </div>
-
-
-{# {% set displayedTags = [] %}
-
-{% for card in cards %}
-    {% for tag in card.tags %}
-        {% if tag.title not in displayedTags %}
-            <div class="text-orange font-bold text-xl ml-20">
-                {{ tag.title }}
-            </div>
-            {% set filteredCards = cards|filter(c => tag in c.tags) %}
-            <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
-                {% for card in filteredCards %}
-                    <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
-                        <img src="{{ card.imageUrl }}"
-                             class="object-cover w-full h-full"
-                             alt="{{ card.descImage }}">
-                        <a href="{{ card.linkUrl }}" target="_blank">
-                            <div class="mask"></div>
-                        </a>
-                        <ul>
-                            {% for tag in card.tags %}
-                                <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
-                            {% endfor %}
-                        </ul>
-                        <span class="project-title">{{ card.title }}</span>
-                    </div>
-                {% endfor %}
-            </div>
-            {% set displayedTags = displayedTags|merge([tag.title]) %}
-        {% endif %}
-    {% endfor %}
-{% endfor %} #}
+<div class="container">
+    <div class="child bounce"></div>
+</div>

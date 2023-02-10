@@ -47,11 +47,12 @@
 
 .tag {
   @apply px-2 rounded-2xl bg-white;
+  width: fit-content;
 }
 
 
 .tag-title {
-  position: absolute;
+  position: relative;
   bottom: 2.5rem;
   left: 2rem;
   color: #391400;
@@ -65,3 +66,30 @@
   font-weight: 800;
 }
 
+.middle {
+  width: 70%;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bg-image:hover .middle {
+  opacity: 1;
+}
+
+.bg-image:hover .tag-title {
+  transition: .5s ease;
+  display: none;
+}
+
+.text {
+  background-color: #ee6c58;
+  color: white;
+  font-size: 12px;
+  padding: 16px 16px;
+}

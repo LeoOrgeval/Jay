@@ -20,7 +20,13 @@
                          class="object-cover w-full h-full"
                          alt="{{ card.descImage }}">
                     <a href="{{ card.linkUrl }}" target="_blank">
-                        <div class="mask"></div>
+                        {% if card.description is not empty %}
+                            <div class="middle-project">
+                                <div class="text">
+                                    {{ card.description }}
+                                </div>
+                            </div>
+                        {% endif %}
                     </a>
                     <ul>
                         {% for tag in card.tags %}
