@@ -58,6 +58,7 @@
   color: #391400;
 }
 
+
 .project-title {
   position: absolute;
   bottom: 0.75rem;
@@ -83,8 +84,7 @@
 }
 
 .bg-image:hover .tag-title {
-  transition: .5s ease;
-  display: none;
+   display: none;
 }
 
 .text {

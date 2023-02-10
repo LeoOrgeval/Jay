@@ -4,36 +4,37 @@
         <div class="grid grid-cols-5">
             <div class="flex flex-col col-span-3 border-blue p-1">
                 <div class="bg-image m-2 hover:grayscale hover-zoom h-64">
+                    <a href="{{ cards[0].linkUrl }}" target="_blank">
                     <img src="{{ cards[0].imageUrl }}" class="object-cover w-full h-full"
                          alt="{{ cards[0].descImage }}">
-                    <a href="{{ cards[0].linkUrl }}" target="_blank">
                         {% if cards[0].description is not empty %}
-                            <div class="middle-project">
-                                <div class="text">
+                            <div class="middle">
+                                <div class="text" style="font-size: 16px">
                                     {{ cards[0].description }}
                                 </div>
                             </div>
                         {% endif %}
                     </a>
                     {% for tag in cards[0].tags %}
-                        <span class="tag tag-title">{{ tag.title }}</span>
+                        <span class="tag tag-title" style="bottom: 3.7rem">{{ tag.title }}</span>
                     {% endfor %}
                     <span class="project-title">{{ cards[0].title }}</span>
                 </div>
                 <div class="border-t-blue">
                     <div class="bg-image m-2 hover:grayscale hover-zoom h-64">
-                        <img src="{{ cards[1].imageUrl }}" class="object-cover w-full h-full"
-                             alt="{{ cards[1].descImage }}">
                         <a href="{{ cards[1].linkUrl }}" target="_blank">
+                            <img src="{{ cards[1].imageUrl }}" class="object-cover w-full h-full"
+                             alt="{{ cards[1].descImage }}">
                             {% if cards[1].description is not empty %}
-                                <div class="middle-project">
-                                    <div class="text">
+                                <div class="middle">
+                                    <div class="text" style="font-size: 16px">
                                         {{ cards[1].description }}
                                     </div>
                                 </div>
-                            {% endif %}                        </a>
+                            {% endif %}
+                        </a>
                         {% for tag in cards[1].tags %}
-                        <span class="tag tag-title">{{ tag.title }}</span>
+                        <span class="tag tag-title" style="bottom: 3.7rem">{{ tag.title }}</span>
                         {% endfor %}
                         <span class="project-title">{{ cards[1].title }}</span>
                     </div>
@@ -41,18 +42,19 @@
             </div>
             <div class="flex col-span-2 border-blue p-2 h-full">
                 <div class="bg-image hover:grayscale hover-zoom m-1">
-                    <img src="{{ cards[2].imageUrl }}" class="object-cover h-full w-full"
-                         alt="{{ cards[2].descImage }}">
                     <a href="{{ cards[2].linkUrl }}" target="_blank">
+                        <img src="{{ cards[2].imageUrl }}" class="object-cover h-full w-full"
+                         alt="{{ cards[2].descImage }}">
                         {% if cards[2].description is not empty %}
-                            <div class="middle-project">
-                                <div class="text">
+                            <div class="middle">
+                                <div class="text" style="font-size: 16px">
                                     {{ cards[2].description }}
                                 </div>
                             </div>
-                        {% endif %}                    </a>
+                        {% endif %}
+                    </a>
                     {% for tag in cards[2].tags %}
-                        <span class="tag tag-title">{{ tag.title }}</span>
+                        <span class="tag tag-title" style="bottom: 3.7rem">{{ tag.title }}</span>
                     {% endfor %}
                     <span class="project-title">{{ cards[2].title }}</span>
                 </div>
