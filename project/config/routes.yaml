@@ -15,6 +15,10 @@ home:
     defaults:
         template: home/home.html.twig
 
+mail:
+    path: /mail
+    controller: App\Controller\MailerController::sendEmail
+    methods: GET
 
 
 about:

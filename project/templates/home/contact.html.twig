@@ -29,13 +29,18 @@
             Lorem ipsum
         </div>
         <div class="flex justify-center">
-            <iframe class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md" style="height: 34rem"
-                    src="https://calendly.com/jay-cormier/15min">
-            </iframe>
+            <div class="calendly-inline-widget w-5/6 h-full" data-auto-load="false">
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                <script>
+                    Calendly.initInlineWidget({
+                        url: 'https://calendly.com/jay-cormier?hide_gdpr_banner=1'
+                    });
+                </script>
+            </div>
         </div>
         <div class="flex justify-center">
             <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 34rem">
-                <form action="submit" method="post">
+                <form action="mail" method="get">
                     <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
                     <div class="flex justify-center">
                         <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 1px">
@@ -55,7 +60,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center items-center my-4">
-                        <button type="submit" class="rounded-md bg-white border-orange w-1/6"
+                        <button type="mail" class="rounded-md bg-white border-orange w-1/6"
                                 style="border-width: 2px">
                             <div class="my-1 text-orange">
                                 Envoyer

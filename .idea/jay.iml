@@ -264,6 +264,10 @@
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/amazon-mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/async-aws/ses" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/async-aws/core" />
+      <excludeFolder url="file://$MODULE_DIR$/project/vendor/symfony/google-mailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
