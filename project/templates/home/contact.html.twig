@@ -40,6 +40,7 @@
         </div>
         <div class="flex justify-center">
             <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 34rem">
+                {{ form_start(mail) }}
                 <form action="mail" method="get">
                     <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
                     <div class="flex justify-center">
@@ -47,29 +48,35 @@
                             <div class="p-2 w-full h-9 flex ml-2">
                                 <img src="{{ asset('images/mail_orange.svg') }}" class="h-5 text-orange"
                                      alt="Logo Mail">
-                                <input class="ml-4 w-5/6" placeholder="john.doe@mail.com"/>
+                                <input type="text" class="ml-4 w-5/6" id="mailer_email" name="mailer[email]"
+                                       required="required"/>
                             </div>
                         </div>
                     </div>
                     <label class="form-label ml-16 mt-4" for="message">Message</label>
                     <div class="flex justify-center">
                         <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 2px">
-                            <div class="p-2 w-full h-72 flex ml-2">
-                                <input class="ml-4 w-5/6" placeholder="Lorem ipsum"/>
+                            <div class="w-full h-72 flex">
+                                <textarea type="text" class="w-full" style="height: 288px" id="mailer_text"
+                                          name="mailer[text]" required="required">
+                                </textarea>
                             </div>
                         </div>
                     </div>
                     <div class="flex justify-center items-center my-4">
-                        <button type="mail" class="rounded-md bg-white border-orange w-1/6"
+                        <button type="submit" id="mailer_save" name="mailer[save]"
+                                class="rounded-md bg-white border-orange w-1/6"
                                 style="border-width: 2px">
                             <div class="my-1 text-orange">
                                 Envoyer
                             </div>
+                            <input type="hidden" id="mailer__token"
+                                   name="mailer[_token]"
+                                   value="5386f71e7.qDExETfp83Bi366tsRlCC1otELmdrXmeslYvUTEFVy4.60tudVuelzE0tfTYwHQhfTsVT4DM5SPT4gFKFEl0AmHyS0RTYauQIla2xQ"/>
                         </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
 </div>

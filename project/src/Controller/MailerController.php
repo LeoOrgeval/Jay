@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\MailerType;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,6 +11,7 @@ use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+
 class MailerController extends AbstractController
 {
     /**
@@ -19,26 +21,35 @@ class MailerController extends AbstractController
     public function sendEmail(MailerInterface $mailer, Request $request): Response
     {
 
+        $form = $this->createForm(MailerType::class);
+        $form->handleRequest($request);
 
-        $email = (new TemplatedEmail())
-            ->from('hello@example.com')
-            ->to('you@example.com')
-            //->cc('cc@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('john.doe@example.com')
-            ->priority(Email::PRIORITY_HIGH)
-            ->subject('Voici le sujet')
-            ->text('Bonsoir, voici le texte du mail')
-            ->htmlTemplate('home/testmail.html.twig')
-            ->context([
-                'firstname' => 'Joe'
-            ]);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mail = $form->getData();
+            $email = (new TemplatedEmail())
+                //->from('hello@example.com')
+                ->from($mail['email'])
+                ->to('jay.cormier@icloud.com')
+                //->cc('cc@example.com')
+                //->bcc('bcc@example.com')
+                //->replyTo('john.doe@example.com')
+                ->priority(Email::PRIORITY_HIGH)
+                ->subject('Site vitrine - ' . $mail['email'])
+                //->text('Bonsoir, voici le texte du mail')
+                //->html($mail['text'])
+                ->htmlTemplate('mail.html.twig')
+                ->context([
+                    'mail' => $mail['email'],
+                    'text' => $mail['text'],
+                ]);
 
-        $mailer->send($email);
+            $mailer->send($email);
 
-        $this->addFlash('success', 'Votre message a bien été envoyé');
+        }
 
-        return $this->redirectToRoute('home');
+            $this->addFlash('success', 'Votre message a bien été envoyé');
+
+        return $this->redirect('/');
 
     }
 }
