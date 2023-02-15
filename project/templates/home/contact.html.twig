@@ -1,4 +1,4 @@
-<div class="bg-cream pt-10 pb-10 h-screen">
+<div class="bg-cream pt-10 pb-10 ">
     <h6 class="text-center text-orange font-light tracking-widest uppercase">
         Contact
     </h6>
@@ -28,21 +28,21 @@
         <div class="flex justify-center">
             Lorem ipsum
         </div>
-        <div class="flex justify-center">
-            <div class="calendly-inline-widget w-5/6 h-full" data-auto-load="false">
+        <div class="flex justify-center h-full">
+            <div class="calendly-inline-widget w-5/6 h-screen" data-auto-load="false">
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
                 <script>
                     Calendly.initInlineWidget({
-                        url: 'https://calendly.com/jay-cormier?hide_gdpr_banner=1'
+                        url: 'https://calendly.com/jay-cormier/15min?hide_gdpr_banner=1'
                     });
                 </script>
             </div>
         </div>
-        <div class="flex justify-center">
-            <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 34rem">
+        <div class="flex mt-16 justify-center">
+            <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 49.5rem">
                 {{ form_start(mail) }}
                 <form action="mail" method="get">
-                    <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
+                    <label class="form-label ml-16 mt-16" for="mail">E-mail</label>
                     <div class="flex justify-center">
                         <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 1px">
                             <div class="p-2 w-full h-9 flex ml-2">
@@ -53,17 +53,16 @@
                             </div>
                         </div>
                     </div>
-                    <label class="form-label ml-16 mt-4" for="message">Message</label>
+                    <label class="form-label ml-16 mt-12" for="message">Message</label>
                     <div class="flex justify-center">
-                        <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 2px">
-                            <div class="w-full h-72 flex">
-                                <textarea type="text" class="w-full" style="height: 288px" id="mailer_text"
-                                          name="mailer[text]" required="required">
-                                </textarea>
+                        <div class="rounded-md bg-white border-shadow w-4/5 h-96" style="border-width: 2px">
+                            <div class="w-full h-full flex">
+                                <textarea type="text" class="w-full" style="height: 380px; resize: none" id="mailer_text"
+                                          name="mailer[text]" required="required"></textarea>
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-center items-center my-4">
+                    <div class="flex justify-center items-center mt-20">
                         <button type="submit" id="mailer_save" name="mailer[save]"
                                 class="rounded-md bg-white border-orange w-1/6"
                                 style="border-width: 2px">

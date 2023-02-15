@@ -1,7 +1,57 @@
 <header class="fixed-top">
+    <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-blue">
+        <div class="container-fluid justify-content-between">
+            <!-- Left elements -->
+            <div class="d-flex">
+                <!-- Brand -->
+                <a class="nav-link text-white ml-10"
+                   href="{{ url('home') }}">JC</a>
+            </div>
+            <!-- Left elements -->
+
+            <!-- Center elements -->
+            <ul class="navbar-nav flex-row d-none d-md-flex">
+                <li class="nav-item me-3 me-lg-1 active">
+                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                       href="{{ url('home') }}">Accueil</a>
+                </li>
+                <li class="nav-item ml-4 me-lg-1">
+                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                       href="{{ url('about') }}">A propos</a>
+                </li>
+                <li class="nav-item ml-4 me-lg-1">
+                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                       href="{{ url('service') }}">Service</a>
+                </li>
+                <li class="nav-item ml-4 me-lg-1">
+                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                       href="{{ url('getCardsTags') }}">Projects</a>
+                </li>
+            </ul>
+            <!-- Center elements -->
+
+            <!-- Right elements -->
+            <ul class="navbar-nav flex-row" style="margin-right: 2.5rem">
+                <li class="nav-item me-lg-1">
+                    <div class="flex justify-end">
+                        <!-- Right Link - Button trigger Contact Navbar-->
+                        <button type="button" class="btn btn-outline-white" data-mdb-toggle="modal"
+                                data-mdb-target="#formChoose" data-mdb-ripple-color="white">
+                            Contact
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <!-- Right elements -->
+        </div>
+    </nav>
+    <!-- Navbar -->
+</header>
+
+{# <nav class="navbar navbar-expand-lg navbar-light bg-blue">
         <!-- Container wrapper -->
-        <div class="container-fluid">
+        <div class="container">
             <!-- Toggle button -->
             <button
                     class="navbar-toggler"
@@ -21,43 +71,47 @@
                     id="navbarCenteredExample"
             >
                 <!-- Left links -->
-                <ul class="navbar-nav  me-auto mb-2 mb-lg-0 flex justify-between">
-                    <div class=" flex justify-between">
+                <ul class="navbar-nav me-2 mb-lg-0">
+                    <div class="flex justify-start">
                         <li class="nav-item">
                             <a class="nav-link text-white"
                                href="{{ url('home') }}">JC</a>
                         </li>
                     </div>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
-                           href="{{ url('home') }}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
-                           href="{{ url('about') }}">A propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
-                           href="{{ url('service') }}">Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
-                           href="{{ url('getCardsTags') }}">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- Right Link - Button trigger Contact Navbar-->
-                        <div class="flex justify-end">
+                    <div class="flex justify-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                               href="{{ url('home') }}">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                               href="{{ url('about') }}">A propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                               href="{{ url('service') }}">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                               href="{{ url('getCardsTags') }}">Projects</a>
+                        </li>
+                    </div>
+                    <div class="flex justify-end">
+                        <li class="nav-item">
+                            <div class="flex justify-end">
+
+                            <!-- Right Link - Button trigger Contact Navbar-->
                             <button type="button" class="btn btn-outline-white" data-mdb-toggle="modal"
                                     data-mdb-target="#formChoose" data-mdb-ripple-color="white">
                                 Contact
                             </button>
-                        </div>
-                    </li>
+                            </div>
+                        </li>
+                    </div>
                 </ul>
                 <!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
         </div>
         <!-- Container wrapper -->
-    </nav>
-</header>
+    </nav> #}
