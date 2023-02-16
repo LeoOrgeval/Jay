@@ -93,3 +93,42 @@
   font-size: 12px;
   padding: 16px 16px;
 }
+
+.btn-warning {
+  background-color: #e4a11b;
+  --mdb-btn-bg: #e4a11b;
+  --mdb-btn-color: #fff;
+  --mdb-btn-box-shadow: 0 4px 9px -4px #e4a11b;
+  --mdb-btn-hover-bg: #d9991a;
+  --mdb-btn-hover-color: #fff;
+  --mdb-btn-focus-bg: #d9991a;
+  --mdb-btn-focus-color: #fff;
+  --mdb-btn-active-bg: #cd9118;
+  --mdb-btn-active-color: #fff;
+}
+
+.btn-primary {
+  background-color: #3b71ca;
+  --mdb-btn-bg: #3b71ca;
+  --mdb-btn-color: #fff;
+  --mdb-btn-box-shadow: 0 4px 9px -4px #3b71ca;
+  --mdb-btn-hover-bg: #386bc0;
+  --mdb-btn-hover-color: #fff;
+  --mdb-btn-focus-bg: #386bc0;
+  --mdb-btn-focus-color: #fff;
+  --mdb-btn-active-bg: #3566b6;
+  --mdb-btn-active-color: #fff;
+}
+
+.btn-info {
+  background-color: #54b4d3;
+  --mdb-btn-bg: #54b4d3;
+  --mdb-btn-color: #fff;
+  --mdb-btn-box-shadow: 0 4px 9px -4px #54b4d3;
+  --mdb-btn-hover-bg: #50abc8;
+  --mdb-btn-hover-color: #fff;
+  --mdb-btn-focus-bg: #50abc8;
+  --mdb-btn-focus-color: #fff;
+  --mdb-btn-active-bg: #4ca2be;
+  --mdb-btn-active-color: #fff;
+}
