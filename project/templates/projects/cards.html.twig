@@ -7,10 +7,13 @@
     {% for card in cards %}
         <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64 rounded-4 drop-shadow-2xl"
              style="aspect-ratio: 3/5">
+            {% if card.linkUrl is not empty %}
+            <a href="{{ card.linkUrl }}" target="_blank">
+                {% endif %}
             <img src="{{ card.imageUrl }}"
                  class="object-cover w-full h-full"
                  alt="{{ card.descImage }}">
-            <a href="{{ card.linkUrl }}" target="_blank">
+
                 {% if card.description is not empty %}
                 <div class="middle">
                     <div class="text">
