@@ -41,24 +41,24 @@
         <div class="flex mt-16 justify-center">
             <div class="sm:w-full lg:w-4/5 sm:h-32 border-orange rounded-md bg-white" style="height: 49.5rem">
                 {{ form_start(mail) }}
-                <form action="mail" method="get">
-                    <label class="form-label ml-16 mt-16" for="mail">E-mail</label>
+                <form action="mail" method="post">
+                    <label class="form-label ml-16 mt-16" for="mailer_email">E-mail</label>
                     <div class="flex justify-center">
                         <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 1px">
                             <div class="p-2 w-full h-9 flex ml-2">
                                 <img src="{{ asset('images/mail_orange.svg') }}" class="h-5 text-orange"
                                      alt="Logo Mail">
-                                <input type="text" class="ml-4 w-5/6" id="mailer_email" name="mailer[email]"
+                                <input type="text" class="ml-4 w-5/6 pl-1" id="mailer_email" name="mailer[email]"
                                        required="required"/>
                             </div>
                         </div>
                     </div>
-                    <label class="form-label ml-16 mt-12" for="message">Message</label>
+                    <label class="form-label ml-16 mt-12" for="mailer_text">Message</label>
                     <div class="flex justify-center">
                         <div class="rounded-md bg-white border-shadow w-4/5 h-96" style="border-width: 2px">
                             <div class="w-full h-full flex">
-                                <textarea type="text" class="w-full" style="height: 380px; resize: none" id="mailer_text"
-                                          name="mailer[text]" required="required"></textarea>
+                                <textarea type="text" class="w-full pl-1" style="height: 380px; resize: none"
+                                          id="mailer_text" name="mailer[text]" required="required"></textarea>
                             </div>
                         </div>
                     </div>
@@ -66,12 +66,12 @@
                         <button type="submit" id="mailer_save" name="mailer[save]"
                                 class="rounded-md bg-white border-orange w-1/6"
                                 style="border-width: 2px">
-                            <div class="my-1 text-orange">
+                            <span class="my-1 text-orange">
                                 Envoyer
-                            </div>
+                            </span>
                             <input type="hidden" id="mailer__token"
                                    name="mailer[_token]"
-                                   value="5386f71e7.qDExETfp83Bi366tsRlCC1otELmdrXmeslYvUTEFVy4.60tudVuelzE0tfTYwHQhfTsVT4DM5SPT4gFKFEl0AmHyS0RTYauQIla2xQ"/>
+                                   value="{{ mail._token.vars.value }}"/>
                         </button>
                     </div>
                 </form>

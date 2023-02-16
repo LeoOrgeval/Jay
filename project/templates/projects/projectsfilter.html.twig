@@ -10,18 +10,16 @@
         <div class="text-orange font-bold text-xl ml-20">
             {{ tag.title }}
         </div>
-
-
         <div class="flex justify-around my-20 ml-36 grid grid-cols-4 gap-4">
             {% for card in cards %}
-
-                <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64" style="aspect-ratio: 3/5">
+                <div class="bg-image hover:grayscale hover-zoom m-2 rounded-[12px] w-64 rounded-4 drop-shadow-2xl"
+                     style="aspect-ratio: 3/5">
                     <img src="{{ card.imageUrl }}"
                          class="object-cover w-full h-full"
                          alt="{{ card.descImage }}">
                     <a href="{{ card.linkUrl }}" target="_blank">
                         {% if card.description is not empty %}
-                            <div class="middle-project">
+                            <div class="middle">
                                 <div class="text">
                                     {{ card.description }}
                                 </div>
@@ -29,9 +27,11 @@
                         {% endif %}
                     </a>
                     <ul>
-                        {% for tag in card.tags %}
-                            <li class="flex tag tag-title mt-4">{{ tag.title }}</li>
-                        {% endfor %}
+                        <div class="mt-8">
+                            {% for tag in card.tags %}
+                                <li class="flex tag tag-title -mt-14">{{ tag.title }}</li>
+                            {% endfor %}
+                        </div>
                     </ul>
                     <span class="project-title">{{ card.title }}</span>
                 </div>

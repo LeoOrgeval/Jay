@@ -71,15 +71,15 @@
                                     aria-label="Close"></button>
                         </div>
                         <div class="modal-body bg-cream">
-                            <div class="flex justify-center">
-                                    <div class="calendly-inline-widget w-full h-96" data-auto-load="false">
-                                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-                                        <script>
-                                            Calendly.initInlineWidget({
-                                                url: 'https://calendly.com/jay-cormier?hide_gdpr_banner=1'
-                                            });
-                                        </script>
-                                    </div>
+                            <div class="flex justify-center" style="height: 49rem">
+                                <div class="calendly-inline-widget w-5/6" data-auto-load="false">
+                                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                                    <script>
+                                        Calendly.initInlineWidget({
+                                            url: 'https://calendly.com/jay-cormier/15min?hide_gdpr_banner=1'
+                                        });
+                                    </script>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -105,38 +105,46 @@
                                     mail</h5>
                             </div>
                         </div>
-                        <div class="modal-body bg-cream" style="height: 30rem">
-                            <form action="submit" method="post">
-                                <label class="form-label ml-16 mt-4" for="mail">E-mail</label>
-                                <div class="flex justify-center">
-                                    <div class="rounded-md bg-white border-shadow w-4/5"
-                                         style="border-width: 1px">
-                                        <div class="p-2 w-full h-9 flex ml-2">
-                                            <img src="{{ asset('images/mail_orange.svg') }}"
-                                                 class="h-5 text-orange"
-                                                 alt="Logo Mail">
-                                            <input class="ml-4 w-5/6" placeholder="john.doe@mail.com"/>
+                        <div class="modal-body bg-cream">
+                            <div class="flex justify-center">
+                                <div class="sm:w-full lg:w-4/5 border-orange rounded-md bg-white h-full">
+                                    {{ form_start(mail) }}
+                                    <form action="mail" method="get">
+                                        <label class="form-label ml-16 mt-16" for="mail">E-mail</label>
+                                        <div class="flex justify-center">
+                                            <div class="rounded-md bg-white border-shadow w-4/5" style="border-width: 1px">
+                                                <div class="p-2 w-full h-9 flex ml-2">
+                                                    <img src="{{ asset('images/mail_orange.svg') }}" class="h-5 text-orange"
+                                                         alt="Logo Mail">
+                                                    <input type="text" class="ml-4 w-5/6 pl-1" id="mailer_email" name="mailer[email]"
+                                                           required="required"/>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <label class="form-label ml-16 mt-4" for="message">Message</label>
-                                <div class="flex justify-center">
-                                    <div class="rounded-md bg-white border-shadow w-4/5"
-                                         style="border-width: 2px">
-                                        <div class="p-2 w-full h-60 flex ml-2">
-                                            <input class="ml-4 w-5/6" placeholder="Lorem ipsum"/>
+                                        <label class="form-label ml-16 mt-12" for="message">Message</label>
+                                        <div class="flex justify-center">
+                                            <div class="rounded-md bg-white border-shadow w-4/5 h-96" style="border-width: 2px">
+                                                <div class="w-full h-full flex">
+                                <textarea type="text" class="w-full pl-1" style="height: 380px; resize: none" id="mailer_text"
+                                          name="mailer[text]" required="required"></textarea>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="flex justify-center items-center my-4">
-                                    <button type="submit" class="rounded-md bg-white border-orange w-1/6"
-                                            style="border-width: 2px">
-                                        <div class="my-1 text-orange">
-                                            Envoyer
+                                        <div class="flex justify-center items-center mt-20">
+                                            <button type="submit" id="mailer_save" name="mailer[save]"
+                                                    class="rounded-md bg-white border-orange w-1/6 mb-5"
+                                                    style="border-width: 2px">
+                                                <div class="my-1 text-orange">
+                                                    Envoyer
+                                                </div>
+                                                <input type="hidden" id="mailer__token"
+                                                       name="mailer[_token]"
+                                                       value="5386f71e7.qDExETfp83Bi366tsRlCC1otELmdrXmeslYvUTEFVy4.60tudVuelzE0tfTYwHQhfTsVT4DM5SPT4gFKFEl0AmHyS0RTYauQIla2xQ"/>
+                                            </button>
                                         </div>
-                                    </button>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" data-mdb-target="#formCalendly" data-mdb-toggle="modal">

@@ -12,12 +12,12 @@
 
             <!-- Center elements -->
             <ul class="navbar-nav flex-row d-none d-md-flex">
-                <li class="nav-item me-3 me-lg-1 active">
-                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                <li class="nav-item me-3 me-lg-1">
+                    <a class="nav-link text-white {% if (app.request.pathInfo == path('home')) %} active text-orange{% endif %}"
                        href="{{ url('home') }}">Accueil</a>
                 </li>
                 <li class="nav-item ml-4 me-lg-1">
-                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                    <a class="nav-link text-white {% if (app.request.pathInfo == path('about')) %} active text-orange{% endif %}"
                        href="{{ url('about') }}">A propos</a>
                 </li>
                 <li class="nav-item ml-4 me-lg-1">
