@@ -132,3 +132,11 @@
   --mdb-btn-active-bg: #4ca2be;
   --mdb-btn-active-color: #fff;
 }
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}

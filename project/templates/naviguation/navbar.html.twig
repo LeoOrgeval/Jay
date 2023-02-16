@@ -13,19 +13,19 @@
             <!-- Center elements -->
             <ul class="navbar-nav flex-row d-none d-md-flex">
                 <li class="nav-item me-3 me-lg-1">
-                    <a class="nav-link text-white {% if (app.request.pathInfo == path('home')) %} active text-orange{% endif %}"
+                    <a class="nav-link {% if (app.request.pathInfo == path('home')) %}text-orange{% else %}text-white{% endif %}"
                        href="{{ url('home') }}">Accueil</a>
                 </li>
                 <li class="nav-item ml-4 me-lg-1">
-                    <a class="nav-link text-white {% if (app.request.pathInfo == path('about')) %} active text-orange{% endif %}"
+                    <a class="nav-link {% if (app.request.pathInfo == path('about')) %}text-orange{% else %}text-white{% endif %}"
                        href="{{ url('about') }}">A propos</a>
                 </li>
                 <li class="nav-item ml-4 me-lg-1">
-                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                    <a class="nav-link {% if (app.request.pathInfo == path('service')) %}text-orange{% else %}text-white{% endif %}"
                        href="{{ url('service') }}">Service</a>
                 </li>
                 <li class="nav-item ml-4 me-lg-1">
-                    <a class="nav-link text-white {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+                    <a class="nav-link {% if (app.request.pathInfo == path('projects')) %}text-orange{% else %}text-white{% endif %}"
                        href="{{ url('getCardsTags') }}">Projects</a>
                 </li>
             </ul>

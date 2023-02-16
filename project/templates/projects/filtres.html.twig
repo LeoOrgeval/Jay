@@ -1,12 +1,12 @@
 <div class="bg-cream">
     <div class="flex justify-evenly my-12 mx-96 text-2xl font-light">
-        <a class="text-dark_brown font-bold text-xl {{ app.request.get('_route') == '_list' ? 'text-orange' }}"
+        <a class="{% if (app.request.pathInfo == path('projects')) %}text-dark_brown font-bold text-2xl {% else %}text-light_brown{% endif %}"
            href="/projects">Tous</a>
         {% set displayedTags = [] %}
         {% for tag in tags %}
             {% if tag.title not in displayedTags %}
                 <a href="/projects/{{ tag.id }}"
-                   class="text-light_brown ml-20 {{ app.request.get('_route') == '_list' ? 'text-orange' }}">
+                   class=" ml-20 {% if (app.request.pathInfo == path('getFilter', { id: tag.id })) %}text-dark_brown font-bold text-2xl {% else %}text-light_brown{% endif %}">
                     {{ tag.title }}
                 </a>
                 {% set displayedTags = displayedTags|merge([tag.title]) %}
